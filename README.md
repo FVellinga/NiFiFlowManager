@@ -1,4 +1,6 @@
 # NiFiFlowManager
 NiFi Flow Manager. An extracting tool to merge single flows in one merged flow
 
-<h1>Description under development</h1>
+<p>Description here is under development, or draft</p1>
+<p>The pdf explains the purpose of this application</p>
+<p>The application itself is also not yet finished</p>
