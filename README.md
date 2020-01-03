@@ -1,4 +1,4 @@
-# NiFiFlowManager
+# NiFi Flow Manager
 NiFi Flow Manager. An extracting tool to merge single flows into one merged flow
 
 <p>This is a Windows Forms application and only runs on Windows machines</p>
