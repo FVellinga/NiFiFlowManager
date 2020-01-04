@@ -1,0 +1,118 @@
+<html>
+<head>
+<style type='text/css'>
+.fs {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.tl {
+	text-align: left;
+}
+</style>
+</head>
+<body>
+<h2 class='fs'>The initialisation form</h2>
+<p class='fs'>This application is a WindowForms tray application. 
+Only one instance of the application runs. To close the application, you have to 
+use the 'Close' menu option of the tray icon. The tray are the incons found at 
+the rigth bottom of the windows taskbar. You can make the application invisible 
+as a whole, or you can make this initialisation form or window invisible.</p>
+<p class='fs'>&nbsp;</p>
+<p class='fs'>The following settings must be initialised.</p>
+<table class='fs'>
+	<tr>
+		<td class='tl' valign='top' style='width: 236px'>NiFi local config</td>
+		<td class='tl' valign='top'>The local <b>Apache NiFi</b> installation configuration directory where the <i>current flow file</i> 
+		 <font color='blue'><b>flows.xml.gz</b></font> is stored. This directory 
+		is defined at installation time, when you install <b>Apache NiFi</b> on 
+		your local machine.</td>
+	</tr>
+	<tr>
+		<td class='tl' style='width: 236px' valign='top'>NiFi local flow directory</td>
+		<td class='tl' valign='top'>The directory where all the single 
+		data flows, or <i>other flows </i>are stored. When 
+		flow development is under source control, using <b>SourceTree</b> or <b>Githbub</b>, then this is regarded as your 'clone' directory.
+		It is at your local file system. 
+		Every <i>data-flow</i> is implemented as an incapsulation of one <i>process group</i> and is stored in a separate sub-directory.</td>
+	</tr>
+	<tr>
+		<td class='tl' style='width: 236px' valign='top'>NiFi local backup flow directory</td>
+		<td class='tl' valign='top'>When you replace the <i>current flow</i>, <font color='blue'><b>flows.xml.gz</b></font>, at
+		 the <i>config directory</i> with an <i>other flow</i> from the <i>local		
+ flow directy</i>, called a <b>PUSH</b> operation, then the <i>current flow</i> is backupped 
+		into a sub-directory at this location
+		</td>
+	</tr>
+	<tr>
+		<td class='tl' style='width: 236px' valign='top'>Common flow</td>
+		<td class='tl' valign='top'>The default directory where the 
+		common flow is stored. This is a sub-directory under the <i>NiFI local flow 
+		directory</i>. When you are merging flows, you are able to change this. The 
+		<i>common flow</i> contains parameter setting and other shared information used 
+		by the <i>other flows</i>.</td>
+	</tr>
+		<tr>
+		<td class='tl' style='width: 236px' valign='top'>Merged flow
+		<td class='tl' valign='top'>The default directory where the 
+		<i>merged flow</i> is stored. This is a sub-directory under the <i>NiFI local flow 
+		directory</i>. When you are merging flows, you are able to change this.
+		The <i>merged flow</i> contains extract from the <i>common flow</i> and the selected <i>other flows</i>.</td>
+	</tr>
+	
+		<tr>
+		<td class='tl' style='width: 236px' valign='top'>Editor alias<td class='tl' valign='top'>
+			You can use a prefered editor, to edit a .xml file. You cannot edit 
+			the content of the compressed file itself. The alias name is 
+			displayed on a button at the user interface. </td>
+	</tr>
+			<tr>
+		<td class='tl' style='width: 236px' valign='top'>Editer path<td class='tl' valign='top'>The path to your preferred editor.</td>
+	</tr>
+
+		<tr>
+		<td class='tl' style='width: 236px' valign='top'>Grid<td class='tl' valign='top'>
+			The <i>merged flow</i> contains all the extracted/imported <i>process groups</i>. 
+			This is a column number telling how many are displayed per row on the canvas.</td>
+	</tr>
+	</table>
+	
+	<p class='fs'>The following auto-start options exists:</p>
+
+	<table class='fs'>
+	
+		<tr>
+		<td class='tl' style='width: 113px' valign='top'>auto populate<td class='tl' valign='top'>
+			Populate the node tree with the above described directories at 
+			start-up.</td>
+	</tr>
+	
+		<tr>
+		<td class='tl' style='width: 113px' valign='top'>auto collapse<td class='tl' valign='top'>
+			Collapes the node tree after being populated with values at 
+			start-up.</td>
+	</tr>
+	
+		<tr>
+		<td class='tl' style='width: 113px' valign='top'>auto render<td class='tl' valign='top'>
+			Render (tag coloring) the XML file when you view a XML file. For 
+			large files (10000 lines and up), this is slow. Only works when the 
+			view mode is RichtTextBox control.</td>
+	</tr>
+	
+		<tr>
+		<td class='tl' style='width: 113px' valign='top'>auto close<td class='tl' valign='top'>
+			Close, makes invisible, this initialisation form at start-up. There 
+			is a delay of 1 second, before this happens.</td>
+	</tr>
+	
+		<tr>
+		<td class='tl' style='width: 113px' valign='top'>view mode<td class='tl' valign='top'>
+			Default viewing is done in a so called RichTextBox control. When you 
+			select this option, it is done in the Webbrowser control. Webbrowser 
+			renders automatically but fails displaying the file content when the 
+			XML file isnvalid. RichTextBox control always displays, but color 
+			rendering can be wrong when your XML file is invaled. Well, the <font color='blue'><b>
+			flow.xml.gz</b></font> file should be always correct.</td>
+	</tr>
+</table>
+</body>
+</html>

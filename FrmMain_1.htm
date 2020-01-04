@@ -1,0 +1,43 @@
+<font face='segoe UI' size='2'><p><b>Apache-Nifi</b> supports one canvas to make flows.
+That flow is stored in a <u>compressed</u> file called <font color='blue'><b>flows.xml.gz</b></font>, located in the <i>NiFi config 
+directory</i>.
+(For example: <font face='consolas'><b>C:\NiFi\nifi-1.10.0\conf</b></font>). Canvas saving is done automatically.<br/><br/>
+When you have many flows the canvas gets crowded. An approach, this application is using, is to put every single flow in a separate file, and then 
+copy the flow to the <i>NiFi config directory</i> when you want to edit the flow. Later on, all the single flows can be merged together in one flow.
+This only works if every single flow is stored as a <b>process group</b>. The following terminology is used:
+<ul>
+<li><i><b>flow directory: </b></i>Every flow, and implemented as a <em>process group</em>, 
+except for the <em>common flow</em> is stored in 
+an unique sub-directory under the <i>flow directory</i>.</li>
+<li><i><b>backup directory: </b></i>A directory used to store the current <em>
+config flow</em> when it is replaced by a new <em>config flow</em>.</li>
+<li><i><b>config directory: </b></i>The location where the <i>config flow</i>, <font color='blue'><b>flows.xml.gz</b></font>, is stored. This is the flow
+used by <b>Apache-NiFi</b>.</li>
+</ul>
+<ul>
+<li><i><b>config flow</b></i>: The flow <b>Nifi</b> is currently executing.</li>
+<li><i><b>common flow</b></i>: An 'empty' flow containing parameters. This flow is filled with the extracts from the <i>
+data flows</i> and 
+becomes the <i>merged flow</i>. The <i>common flow</i> itself is not changed by this merging process.</li>
+<li><i><b>merged flow</b></i>: The flow that contains the extract of the <i>common flow</i> and the selected <i>
+data flows</i>.</li>
+<li><i><b>data flow</b></i>: None of the flow types mentioned above. This is the flow that contains your dataflow,
+encapsulated in a <i>process group</i>.</li>
+</ul>
+<ul>
+<li><b>PULL:</b> Pulls the <em>config flow</em> (<font color='blue'><b>flows.xml.gz</b></font>) 
+from the <em>config directory</em> and store it in sub-directory, created when 
+not exists, under the <em>flow directory</em>.
+(For every flow a directory is created.)</li>
+<li><b>PUSH:</b> Push a flow from the <em>flow directory</em> to the <i>config directory</i>. A file replacement. The 
+current <em>config flow</em> file is put in 
+a backup directory.</li>
+<li><b>COMMON:</b> A flow marked as the <i>common flow</i>. This is an empty flow. Only (global) parameters are listed here.</li>
+<li><b>MERGE:</b> A flow marked as the <i>merged flow</i>. Selected flows are merged into the <i>common flow</i> (which itself is not changed) and
+becomes the <i>merged flow</i>.</li>
+</ul>
+<p><b><u>Note:</u></b> 
+When you copy a flow and want to work with the copied flow, you have to first copy the 
+<em>process group</em> to a new one and delete the original <em>process group</em>. This is needed because every processor/parameter must have a unique processor id. The copying is doing that for you. When a flow has objects (processors) with the same id, 
+<strong>Apache NiFi </strong>won’t run. It shuts down.</br></br>
+<b><u>Note:</u></b> To <b>PUSH</b> a file, <b>Apache-Nifi</b> will be shut down. Re-starting <b>Apache-NiFi</b> must be done manual.</p></font>

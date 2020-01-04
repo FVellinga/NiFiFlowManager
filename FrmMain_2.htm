@@ -1,0 +1,139 @@
+<html>
+<head>
+<style type='text/css'>
+.fs {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.tl {
+	text-align: left;
+}
+.auto-style2 {
+	font-style: italic;
+}
+.auto-style3 {
+	font-family: Consolas;
+}
+.auto-style4 {
+	text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<h2 class='fs'>The initialisation form</h2>
+<p class='fs'>This application is a C# Window Forms tray application. 
+Only one instance of the application runs. To close the application, you have to 
+use the 'Close' menu option of the tray icon. The tray are the icons found at 
+the rigth bottom of the windows taskbar. You can make the application invisible 
+as a whole, or you can make this initialisation form or window invisible. The 
+application only lists <span class="auto-style3"><strong>*.xml</strong></span> 
+and compressed <span class="auto-style3"><strong>*.gz</strong></span> files.</p>
+<p class='fs'><span class="auto-style4"><strong>Remark:</strong></span> This 
+window has a Help Menu Item. The others do not. Use the
+<span class="auto-style3"><strong>F1</strong></span> keyboad button instead.<span style="color: rgb(0, 0, 0); font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">.</span></p>
+<p class='fs'>The following settings must be specified.</p>
+<table class='fs'>
+	<tr>
+		<td class='tl' valign='top' style='width: 236px'>NiFi config directory</td>
+		<td class='tl' valign='top'>The local <b>Apache NiFi</b> installation configuration directory where the <i>
+		config flow</i> file 
+		 <font color='blue'><b>flows.xml.gz</b></font> is stored. This directory 
+		is defined at installation time, when you install <b>Apache NiFi</b> on 
+		your local machine. The <i>config flow</i> is the flow that is run/execute by <b>NiFi</b>.</td>
+	</tr>
+	<tr>
+		<td class='tl' style='width: 236px' valign='top'>NiFi flow directory</td>
+		<td class='tl' valign='top'>The directory where all flows are stored. 
+		(The <em>common flow</em>, the <em>merged flow</em> and the <em>data 
+		flows</em>.) When 
+		flow development is under source control, using <b>SourceTree</b> or <b>GithHub</b>, then this is regarded as your 'clone' directory.
+		It is at your local file system. 
+		Every <i>data flow</i> is implemented as an incapsulation of one <i>process group</i> and is stored in a separate sub-directory.</td>
+	</tr>
+	<tr>
+		<td class='tl' style='width: 236px; height: 46px;' valign='top'>NiFi backup directory</td>
+		<td class='tl' valign='top' style="height: 46px">When you replace the <i>
+		config flow</i>, <font color='blue'><b>flows.xml.gz</b></font>, at
+		 the <i>NiFi config directory</i> with an other flow from the <i>NiFi		
+ flow directy</i>, called a <b>PUSH</b> operation, then the <i>config flow</i> is back-upped 
+		into a sub-directory at this location.</td>
+	</tr>
+	<tr>
+		<td class='tl' style='width: 236px' valign='top'>Common flow</td>
+		<td class='tl' valign='top'>The default directory where the 
+		<em>common flow</em> is stored. This is a sub-directory under the <i>
+		NiFi flow 
+		directory</i>. When you are merging flows, you are able to change this. The 
+		<i>common flow</i> contains parameter setting and other shared information used 
+		by the <em>data flows</em>.</td>
+	</tr>
+		<tr>
+		<td class='tl' style='width: 236px' valign='top'>Merged flow
+		<td class='tl' valign='top'>The default directory where the 
+		<i>merged flow</i> is stored. This is a sub-directory under the <i>NiFI flow 
+		directory</i>. When you are merging flows, you are able to change this.
+		The <i>merged flow</i> contains extract from the <i>common flow</i> and the selected 
+		<i>data</i><span class="auto-style2"> </span><i>flows</i>.</td>
+	</tr>
+	
+		<tr>
+		<td class='tl' style='width: 236px' valign='top'>Editor alias<td class='tl' valign='top'>
+			You can use a prefered editor to edit a <span class="auto-style3">
+			<strong>*.xml</strong></span> file. You cannot edit 
+			the content of a compressed file itself. The alias name is 
+			displayed on a button at the user interface. </td>
+	</tr>
+			<tr>
+		<td class='tl' style='width: 236px' valign='top'>Editer path<td class='tl' valign='top'>The path to your preferred editor.</td>
+	</tr>
+
+		<tr>
+		<td class='tl' style='width: 236px' valign='top'>Grid<td class='tl' valign='top'>
+			The <i>merged flow</i> contains all the extracted/imported <i>process groups</i>. 
+			This is a column number telling how many are displayed per row on the canvas. 
+			Once specified, the <em>merged flow</em> get x/y coordinates. 
+			Changes here are not reflected in the <em>merged flow</em>, unless 
+			you generate again.</td>
+	</tr>
+	</table>
+	
+	<p class='fs'>&nbsp;The following auto-start options exists:</p>
+
+	<table class='fs'>
+	
+		<tr>
+		<td class='tl' style='width: 113px' valign='top'>auto populate<td class='tl' valign='top'>
+			Populate the node tree with the above described directories at 
+			start-up.</td>
+	</tr>
+	
+		<tr>
+		<td class='tl' style='width: 113px' valign='top'>auto collapse<td class='tl' valign='top'>
+			Collapes the node tree after being populated with values at 
+			start-up.</td>
+	</tr>
+	
+		<tr>
+		<td class='tl' style='width: 113px' valign='top'>auto render<td class='tl' valign='top'>
+			Render (tag coloring) the XML file when you view a XML file. For 
+			large files (10000 lines and up), this is slow. Only works when the 
+			view mode is RichtTextBox control.</td>
+	</tr>
+	
+		<tr>
+		<td class='tl' style='width: 113px' valign='top'>auto close<td class='tl' valign='top'>
+			Close, makes invisible, this initialisation form at start-up. There 
+			is a delay of 1 second, before this happens.</td>
+	</tr>
+	
+		<tr>
+		<td class='tl' style='width: 113px' valign='top'>view mode<td class='tl' valign='top'>
+			Default viewing is done in a so called RichTextBox control. When you 
+			select this option, it is done in the Webbrowser control. Webbrowser 
+			renders automatically but fails displaying the file content when the 
+			XML file is invalid. RichTextBox control always displays, but color 
+			rendering can be wrong when your XML file is invalid. Well, the <font color='blue'><b>
+			flow.xml.gz</b></font> file should be always correct.</td>
+	</tr>
+</table>
+</body>
+</html>
