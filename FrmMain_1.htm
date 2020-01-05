@@ -1,5 +1,5 @@
 <font face='segoe UI' size='2'><p><b>Apache-Nifi</b> supports one canvas to make flows.
-That flow is stored in a <u>compressed</u> file called <font color='blue'><b>flows.xml.gz</b></font>, located in the <i>NiFi config 
+That flow is stored in a <u>compressed</u> file called <font color='blue'><b>flow.xml.gz</b></font>, located in the <i>NiFi config 
 directory</i>.
 (For example: <font face='consolas'><b>C:\NiFi\nifi-1.10.0\conf</b></font>). Canvas saving is done automatically.<br/><br/>
 When you have many flows the canvas gets crowded. An approach, this application is using, is to put every single flow in a separate file, and then 
@@ -10,7 +10,7 @@ This only works if every single flow is stored as a <b>process group</b>. The fo
 an unique sub-directory under the <i>flow directory</i>.</li>
 <li><i><b>backup directory: </b></i>A directory used to store the current <em>
 config flow</em> when it is replaced by a new <em>config flow</em>.</li>
-<li><i><b>config directory: </b></i>The location where the <i>config flow</i>, <font color='blue'><b>flows.xml.gz</b></font>, is stored. This is the flow
+<li><i><b>config directory: </b></i>The location where the <i>config flow</i>, <font color='blue'><b>flow.xml.gz</b></font>, is stored. This is the flow
 used by <b>Apache-NiFi</b>.</li>
 </ul>
 <ul>
@@ -24,7 +24,7 @@ data flows</i>.</li>
 encapsulated in a <i>process group</i>.</li>
 </ul>
 <ul>
-<li><b>PULL:</b> Pulls the <em>config flow</em> (<font color='blue'><b>flows.xml.gz</b></font>) 
+<li><b>PULL:</b> Pulls the <em>config flow</em> (<font color='blue'><b>flow.xml.gz</b></font>) 
 from the <em>config directory</em> and store it in sub-directory, created when 
 not exists, under the <em>flow directory</em>.
 (For every flow a directory is created.)</li>
