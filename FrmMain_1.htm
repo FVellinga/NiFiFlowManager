@@ -6,8 +6,7 @@ When you have many flows the canvas gets crowded. An approach, this application 
 copy the flow to the <i>NiFi config directory</i> when you want to edit the flow. Later on, all the single flows can be merged together in one flow.
 This only works if every single flow is stored as a <b>process group</b>. The following terminology is used:
 <ul>
-<li><i><b>flow directory: </b></i>Every flow, and implemented as a <em>process group</em>, 
-except for the <em>common flow</em> is stored in 
+<li><i><b>flow directory: </b></i>Every flow is stored in 
 an unique sub-directory under the <i>flow directory</i>.</li>
 <li><i><b>backup directory: </b></i>A directory used to store the current <em>
 config flow</em> when it is replaced by a new <em>config flow</em>.</li>
@@ -37,7 +36,7 @@ a backup directory.</li>
 becomes the <i>merged flow</i>.</li>
 </ul>
 <p><b><u>Note:</u></b> 
-When you copy a flow and want to work with the copied flow, you have to first copy the 
+When you copy a flow and want to work with the copied flow, you first have to copy the 
 <em>process group</em> to a new one and delete the original <em>process group</em>. This is needed because every processor/parameter must have a unique processor id. The copying is doing that for you. When a flow has objects (processors) with the same id, 
-<strong>Apache NiFi </strong>won’t run. It shuts down.</br></br>
+<strong>Apache NiFi </strong>does not run. It shuts down.</br></br>
 <b><u>Note:</u></b> To <b>PUSH</b> a file, <b>Apache-Nifi</b> will be shut down. Re-starting <b>Apache-NiFi</b> must be done manual.</p></font>
